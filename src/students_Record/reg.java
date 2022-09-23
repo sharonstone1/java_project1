@@ -368,9 +368,7 @@ public class reg extends javax.swing.JFrame {
         }
             
         
-        }
-        
-              
+        }        
         
        // add button function 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -456,8 +454,7 @@ public class reg extends javax.swing.JFrame {
         txtcourse.setText("");
             
             }
-            
-       
+                
         }catch(ClassNotFoundException ex){
             Logger.getLogger(reg.class.getName()).log(Level.SEVERE, null, ex);
         
