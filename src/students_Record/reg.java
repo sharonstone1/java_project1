@@ -373,9 +373,9 @@ public class reg extends javax.swing.JFrame {
        // add button function 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
            
-        String name = txtname.getText();
-        String mobile = txtmobile.getText();
-        String course = txtcourse.getText();
+        String name = txtname.getText().toString();
+        String mobile = txtmobile.getText().toString();
+        String course = txtcourse.getText().toString();
         
         try{
             // connection with the database
@@ -384,9 +384,29 @@ public class reg extends javax.swing.JFrame {
         
         // define the data that will be insert into the database
         insert = con.prepareStatement("insert into students_Record(name,mobile, course) values(?,?,?)");
-        insert.setString(1,name );
+       if(name.equals("")){
+            JOptionPane.showMessageDialog(null, "please enter a name");
+        
+        }else{
+       insert.setString(1,name );
+       }
+         
+        if(mobile.equals("")){
+            JOptionPane.showMessageDialog(null, "please enter a phone number");
+        
+        }else{
+        
         insert.setString(2,mobile );
-        insert.setString(3,course );
+        }
+        
+        
+         if(course.equals("")){
+            JOptionPane.showMessageDialog(null, "please enter a course name");
+        
+        }else{
+         insert.setString(3,course );
+         }
+        
         insert.executeUpdate();
         
         // get the message of adding data into database
